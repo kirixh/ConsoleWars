@@ -7,7 +7,7 @@ class Map:
         self.size = size
 
     def getinformation(self, coord_x, coord_y):
-        return self.map[coord_y][coord_x]
+        pass
 
     def show_map(self):
         for i in range(self.size):
