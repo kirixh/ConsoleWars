@@ -1,4 +1,7 @@
-from Creators import *
+from Creators.WarriorCreator import WarriorCreator
+from Creators.ScoutCreator import ScoutCreator
+from Creators.MineCreator import MineCreator
+from Creators.WallCreator import WallCreator
 
 
 class Map:
@@ -20,11 +23,11 @@ class ShopInterface:
 
     def buy_unit(self, unit_type):
         shop_list = {'scout': ScoutCreator(), 'warrior': WarriorCreator()}
-        return shop_list[unit_type]
+        return shop_list[unit_type].create()
 
     def buy_building(self, building_type):
         shop_list = {'mine': MineCreator(), 'wall': WallCreator()}
-        return shop_list[building_type]
+        return shop_list[building_type].create()
 
     def upgrade_unit(self):
         pass
