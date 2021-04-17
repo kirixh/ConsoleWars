@@ -8,12 +8,14 @@ class Unit(ABC):
         self.coord_x = coord_x
         self.coord_y = coord_y
         self.lvl = 1
+        self.in_army = False
 
     def move(self, command) -> (int, int):
         steps = {'up': (-1, 0), 'down': (1, 0), 'left': (0, -1), 'right': (0, 1), 'stay': (0, 0)}
         # проверить, пуста ли клетка
         self.coord_x += steps[command][0]
         self.coord_y += steps[command][1]
+        # если выходим из армии или вступаем в армию - self.in_army = True; Army.add/remove
         return self.coord_x, self.coord_y
 
     @abstractmethod
@@ -21,11 +23,7 @@ class Unit(ABC):
         pass
 
     def upgrade(self):
-        if self.lvl < self.maxlvl:
-            self.lvl += 1
-            # снять деньги с игрока
-        else:
-            print("Can't upgrade unit - maxlevel reached. ")
+        self.lvl += 1
 
     def __del__(self):
         # поменять состояние клетки на карте
