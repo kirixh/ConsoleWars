@@ -23,6 +23,13 @@ class Checkpoint1Test(unittest.TestCase):
     def test_buy_mine(self):
         self.assertTrue(isinstance(self.interface.buy_building("mine"), Mine))
 
+    def test_move_unit(self):
+        pass
+
+#class Checkpoint2Test(unittest.TestCase):
+
+
+
 
 if __name__ == "__main__":
     unittest.main()

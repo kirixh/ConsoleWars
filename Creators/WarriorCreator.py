@@ -5,4 +5,4 @@ from Creators.UnitCreator import UnitCreator
 
 class WarriorCreator(UnitCreator):
     def create(self):
-        return Warrior(1, 1)
+        return Warrior(1, 1, 1)
