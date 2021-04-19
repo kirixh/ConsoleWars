@@ -3,7 +3,6 @@ from abc import ABC, abstractmethod
 
 
 class UnitCreator(ABC):
-
     @abstractmethod
-    def create(self):
+    def create(self, game_map, symb, *coords):
         pass

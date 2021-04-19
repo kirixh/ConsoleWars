@@ -1,5 +1,3 @@
-
-
 """sc1 = Scout(0,0)
 sc2 = Scout(1,0)
 move(1,0)
@@ -70,6 +68,8 @@ class Map:
                     armies.add(__bfs__([i, j], temp_map, self.size, temp_map[i][j]))
         return armies
 
+    def change_map(self, coord_x, coord_y, game_entity):
+        self.map[coord_x][coord_y] = game_entity
 
 # @ - Scout of the first team
 # $ - Warrior of the first team
@@ -78,6 +78,3 @@ class Map:
 # # - Mine of the first team
 # + - Mine of the second team
 # = - Wall
-
-
-
