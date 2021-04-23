@@ -18,4 +18,3 @@ class Warrior(Unit):
             # сравнить уровни и классы юнитов
             # map.getinformation
             # map.delete_unit()
-
