@@ -1,6 +1,5 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
-from Map import Map
 
 
 class Unit(ABC):
@@ -10,13 +9,13 @@ class Unit(ABC):
         self.coord_y = coord_y
         self.lvl = 1
 
-    def move(self, command, _map: Map) -> (int, int):
+    def move(self, command, _map) -> (int, int):
         steps = {'up': (-1, 0), 'down': (1, 0), 'left': (0, -1), 'right': (0, 1), 'stay': (0, 0)}
-        if Map.get_information(_map, self.coord_x + steps[command][0], self.coord_y + steps[command][1]) == 'X':
+        if _map.get_symbol(self.coord_x + steps[command][0], self.coord_y + steps[command][1]) == 'X':
 
-            Map.change_map(_map, self.coord_x + steps[command][0], self.coord_y + steps[command][1],
-                           Map.get_information(_map, self.coord_x, self.coord_y))
-            Map.change_map(_map, self.coord_x, self.coord_y, 'X')
+            _map.change_map(self.coord_x + steps[command][0], self.coord_y + steps[command][1],
+                            _map.get_symbol(self.coord_x, self.coord_y))
+            _map.change_map(self.coord_x, self.coord_y, 'X')
             self.coord_x += steps[command][0]
             self.coord_y += steps[command][1]
 

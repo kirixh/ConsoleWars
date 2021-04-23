@@ -13,7 +13,7 @@ class Army(Unit):
 
     def remove(self, unit) -> None:
         self._children.remove(unit)
-        unit.parent = self
+        unit.parent = None
 
     def move(self, command, _map) -> (int, int):
         for unit in self._children:

@@ -5,7 +5,6 @@ class Scout(Unit):
     def __init__(self, coord_x, coord_y):
         super().__init__(coord_x, coord_y)
         self.maxlvl = 5
-        self.cost = 3
         self.upgrade_cost = 1
 
     def attack(self, coord_x, coord_y):

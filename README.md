@@ -37,4 +37,7 @@
 # ****************************************************************************************************
 ## Checkpoint_1
  - realized 0.1 version of game, described Units and Buildings architecture with Factory method pattern.
-
+##Checkpoint_2
+- realized 0.2 version of game, added map and interaction with it, learnt how to start the game, buy units&buildings,
+  created class Player, created class Army with the help of Composite pattern, realized the army-search and map round with the help of BFS.
+  

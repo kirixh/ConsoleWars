@@ -5,7 +5,6 @@ class Warrior(Unit):
     def __init__(self, coord_x, coord_y, number):
         super().__init__(coord_x, coord_y)
         self.maxlvl = 7
-        self.cost = 4
         self.upgrade_cost = 2
         self.army = None
         self.number = number
