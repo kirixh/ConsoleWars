@@ -11,3 +11,4 @@ class WarriorCreator(UnitCreator):
         game_map.map[coords[0]][coords[1]] = symb
         game_map.info[(coords[0], coords[1])].append(Warrior(coords[0], coords[1], self.war_number))
         return game_map.info[(coords[0], coords[1])][0]
+
