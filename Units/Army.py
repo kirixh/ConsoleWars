@@ -2,6 +2,10 @@ from Units.Unit import Unit
 
 
 class Army(Unit):
+    """
+    Класс армия. Используется паттерн Компоновщик.
+    Управление армией происходит так же как и с обычным юнитом.
+    """
     def __init__(self, coord_x, coord_y) -> None:
         super().__init__(coord_x, coord_y)
         self._children = []

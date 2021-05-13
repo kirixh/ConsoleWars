@@ -1,6 +1,7 @@
 from Map import Map
 from Players.Player import Player
 
+
 print("ConsoleWars game has started!\n ")
 map_size = int(input("Input the size of the map (size > 20): "))
 while map_size <= 20:
@@ -14,6 +15,10 @@ game_map.show_map()
 
 
 def maingame(player):
+    """
+    Функция в которой происходит процесс игры.
+    :param player: Игрок
+    """
     print(f"{player.player_name}, it's your turn!\n"
           f"Here is list of commands:\n"
           f"\tbuy_unit <unit_type> <coord_x> <coord_y>\n"
@@ -42,6 +47,10 @@ def maingame(player):
 
 
 def army_setter(map_game):
+    """
+    Функция которая анализирует карту после каждого и обновляет информацию об армиях.
+    :param map_game: Игровая карта карта
+    """
     armies = map_game.search_armies()
     player1.armies = []
     player2.armies = []

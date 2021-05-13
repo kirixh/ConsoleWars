@@ -2,6 +2,10 @@ from Units.Unit import Unit
 
 
 class Warrior(Unit):
+    """
+    Класс Воин.
+    Умеет передвигаться и атаковать.
+    """
     def __init__(self, coord_x, coord_y, number):
         super().__init__(coord_x, coord_y)
         self.maxlvl = 7

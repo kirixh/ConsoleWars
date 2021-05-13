@@ -2,6 +2,10 @@ from Units.Unit import Unit
 
 
 class Scout(Unit):
+    """
+    Класс Разведчик.
+    Умеет передвигаться, атаковать и перепрыгивать стены.
+    """
     def __init__(self, coord_x, coord_y):
         super().__init__(coord_x, coord_y)
         self.maxlvl = 5
