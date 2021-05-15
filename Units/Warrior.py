@@ -2,9 +2,16 @@ from Units.Unit import Unit
 
 
 class Warrior(Unit):
-    def __init__(self, coord_x, coord_y):
+    """
+    Класс Воин.
+    Умеет передвигаться и атаковать.
+    """
+    def __init__(self, coord_x, coord_y, number):
         super().__init__(coord_x, coord_y)
         self.maxlvl = 7
+        self.upgrade_cost = 2
+        self.army = None
+        self.number = number
 
     def attack(self, coord_x, coord_y):
         if abs(coord_x - self.coord_x) + abs(coord_y - self.coord_y) != 1:
