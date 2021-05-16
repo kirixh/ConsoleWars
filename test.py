@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 from Players.Player import ShopInterface
 from Units.Scout import Scout
 from Units.Warrior import Warrior
@@ -43,6 +44,10 @@ class Checkpoint2Test(unittest.TestCase):
         self.player.buy_unit("warrior", 1, 5, 5)
         self.player.buy_unit("warrior", 1, 5, 6)
         self.assertTrue(isinstance(self.game_map.search_armies()[0][1], Army))
+
+    @patch('Map.Map.search_armies', return_value=[['$', Army(1, 1)]])
+    def test_mock_search_armies(self, search_armies):
+        self.assertTrue(isinstance(search_armies()[0][1], Army))
 
 
 if __name__ == "__main__":
